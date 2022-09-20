@@ -55,6 +55,16 @@ line-height: 1;
 font-weight: 400;
 }
 
+.weather-temperature .active{
+    color:rgb(33,33,33);
+    cursor:default;
+}
+
+.weather-temperature .active:hover{
+    text-decoration: none;
+}
+
+
 
 .weather-temperature .units{
     font-size: 16px;
