@@ -42,9 +42,20 @@ function displayTemperature(response){;
 
 }
 
-let city="athens"
-let apiKey = "8c48afa47a9a9c24f3500c7039d50aaa";
-let units = `metric`;
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
-    
-axios.get(apiUrl).then(displayTemperature);
+function search(city){
+    let apiKey = "8c48afa47a9a9c24f3500c7039d50aaa";
+    let units = `metric`;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+        
+    axios.get(apiUrl).then(displayTemperature);    
+}
+
+function handleSubmit(event){
+    event.preventDefault();
+    let cityInputElement=document.querySelector("#city-input");
+    search(cityInputElement.value);
+}
+
+
+let form= document.querySelector("#search-form");
+form.addEventListener("submit",handleSubmit);
